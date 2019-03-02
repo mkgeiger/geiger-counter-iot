@@ -532,7 +532,8 @@ void loop()
 	client.println("   function drawChartG() {");
 	client.println("      var data = google.visualization.arrayToDataTable([ ");
 	client.println("        ['Label', 'Value'], ");
-	client.print  ("        ['\xB5Sv/h',  ");
+  client.print  ("        ['\\u00B5Sv/h',  ");
+ 
 
 	if (lastcSv != 0)
 	{
@@ -583,7 +584,7 @@ void loop()
 
 	client.println("    function drawChart() { ");
 	client.println("     var data = google.visualization.arrayToDataTable([ ");
-	client.println("       ['Hit', 'CPM', '\xB5Sv/h'] ");
+	client.println("       ['Hit', 'CPM', '\\u00B5Sv/h'] ");
 
 	if (chartvalues_cnt > 0)
 	{
@@ -625,7 +626,7 @@ void loop()
 	client.println("  vAxes: { ");
 	client.println("         // Adds titles to each axis. ");
 	client.println("         0: {title: 'CPM'}, ");
-	client.println("         1: {title: '\xB5Sv/h'} ");
+	client.println("         1: {title: '\\u00B5Sv/h'} ");
 	client.println("       }, ");
 	client.println("  hAxes: { ");
 	client.println("         // Adds titles to each axis. ");
