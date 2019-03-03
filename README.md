@@ -56,6 +56,41 @@ The mode switch is used to switch between long term measurement mode (with piezo
 
 ## Software
 
+### Preparations
+
+First install the [Arduino IDE](https://www.arduino.cc/en/main/software). Under board administration install support for "NodeMCU 1.0 (ESP-12E Module)". The flash size has to be configured for "4M (3M SPIFFS)". The CPU frequency has to be configured for "160 MHz". Following libraries have to be installed:
+
+* Time
+* WiFi
+* WiFiManager
+
+### GM-tube parameterization
+
+The GM-tube conversion factor can be adapted in the source code when other GM-tubes are used. In the datasheet of the SBM-20 tube we find following: Gamma Sensivity Ra226 = 29 cps/mR/h. In other words: 29 cps are equivalent to 1 mR/h. Or 1740 cpm are equivalent to 10μS/h. Or 1 cpm is equivalent to 0.0057 μS/h. This conversion factor has to be divided by the number of used GM-tubes.
+
+### NTP client
+
+The NTP client adjust the internal clock every 10 minutes. The timestamp (UTC Unix time) is used for the filenames containing the logging data and also for each logging event.
+
+### HTTP server
+
+The HTTP server shows a webpage, which is refreshing its contents every minute or on request by the "Refresh" button, with following contents:
+
+* the session details (total hit count, total minutes, average CPM and dose) after the last power reset or pressing the "Reset Session" button.
+* a link to the download page.
+* a graphical gauge to display the current dose of the last minute. The gauge is adjusting its range for higher doses.
+* a diagram to show the CPM and dose values of the last hour after reset.
+* the free space in the filesystem
+* a "Reset Wifi" button to enter the access point mode to be able to modify the Wifi parameters.
+
+### Piezo buzzer
+
+The piezo buzzer is switched on only in portable mode. Best sound results for the ticks appeared when the buzzer is switched on for only 1 ms.
+
+### Data logging
+
+For data logging the SPIFFS formated file system is used. When the "Clear"-Button in the download page is pressed all data logging files are deleted except the current one. The median value of the last 10 min (10 measurements @ 1 measurement/min) is logged together with its Unix timstamp. With this logging rate it is possible to log permanently for more than 2 years. The user has to download and delete older logfiles from time to time. One logfile contains the data of 4 weeks.
+
 ## Photos
 
 Opened case:
