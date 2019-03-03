@@ -83,6 +83,8 @@ The HTTP server shows a webpage, which is refreshing its contents every minute o
 * the free space in the filesystem
 * a "Reset Wifi" button to enter the access point mode to be able to modify the Wifi parameters.
 
+![Screenshot](/photos/screenshot.png)
+
 ### Piezo buzzer
 
 The piezo buzzer is switched on only in portable mode. Best sound results for the ticks appeared when the buzzer is switched on for only 1 ms.
