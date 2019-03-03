@@ -139,7 +139,7 @@ void GMpulse()
 	Serial.print(" Time seconds: "); Serial.println(seconds);
 	Serial.print(" Time minutes: "); Serial.println(minutes);
 	Serial.print(" CPM: "); Serial.println(CPM);
-	Serial.print(" uSv/hr: "); Serial.println(uSv);
+	Serial.print(" uSv/h: "); Serial.println(uSv);
 	Serial.println(" ");
 #endif
 }
@@ -668,7 +668,7 @@ void loop()
 	client.println(minutesHolder);
 	client.print("<br>Avg CPM: <b>");
 	client.println(CPMholder);
-	client.print("</b><br>Avg &micro;Sv/hr: <b>");
+	client.print("</b><br>Avg &micro;Sv/h: <b>");
 	client.println(uSvholder);
 	client.println("</b><br><a href=\"/RESET\"\"><button>Reset Session</button></a>");
 
