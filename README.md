@@ -23,7 +23,7 @@ As already mentioned the GM-tubes are taken from a defective GM-counter. SBM-20 
 
 ![SBM-20](/hardware/SBM-20_STS-5.jpg) 
 
-### NodeMcu ESP8266-E12
+### NodeMcu ESP8266-12E
 
 I decided to take this microcontroller board because of its power, easy programming, WIFI and small form factor. Make sure you have an NodeMcu with 4 MByte flash, which is used for long term measurement. Following GPIOs are used:
 
@@ -58,3 +58,14 @@ The mode switch is used to switch between long term measurement mode (with piezo
 
 ## Photos
 
+Opened case:
+![Opened](/photos/opened.jpg)
+
+NodeMcu ESP8266-12E:
+![Opened](/photos/esp8266.jpg)
+
+High voltage booster:
+![Opened](/photos/highvoltage.jpg)
+
+Finished device:
+![Opened](/photos/finished.jpg)
