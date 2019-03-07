@@ -16,9 +16,9 @@
 #define AP_NAME "geiger_counter"
 #define AP_TIMEOUT 60
 
-// Geiger Mueller tube parameterization (see datasheet of SBM-20)
-// gamma sensivity for Radium224: 29cps = 1740cpm ≙ 1mR/h = 10μS/h ->  1cpm ≙ 0.0057μS/h
-#define SBM20_FACTOR  ((double)0.0057)
+// Geiger Mueller tube parameterization (see manufacturer of radiation kits: http://www.libelium.com/wireless_sensor_networks_to_control_radiation_levels_geiger_counters/)
+// gamma sensivity: 60cps = 3600cpm ≙ 1mR/h = 10μS/h ->  1cpm ≙ 0.00277μS/h
+#define SBM20_FACTOR  ((double)0.00277)
 #define NBR_GMTUBES   2
 #define TUBE_FACTOR   (SBM20_FACTOR / (double)NBR_GMTUBES)
 
@@ -552,7 +552,7 @@ void loop()
 	// setup the google chart options here
 	client.println("    var options = {");
 	client.println("      width: 700, height: 600,");
-	if (lastcSvTmp < 1.0)
+  if (lastcSvTmp < 1.0)
 	{
 		client.println("      min: 0, max: 1,");
 		client.println("      greenFrom: 0, greenTo: .25,");

@@ -66,7 +66,7 @@ First install the [Arduino IDE](https://www.arduino.cc/en/main/software). Under 
 
 ### GM-tube parameterization
 
-The GM-tube conversion factor can be adapted in the source code when other GM-tubes are used. In the datasheet of the SBM-20 tube we find following: Gamma Sensivity Ra226 = 29 cps/mR/h. In other words: 29 cps are equivalent to 1 mR/h. Or 1740 cpm are equivalent to 10μS/h. Or 1 cpm is equivalent to 0.0057 μS/h. This conversion factor has to be divided by the number of used GM-tubes.
+The GM-tube conversion factor can be adapted in the source code when other GM-tubes are used. At [Libellum](http://www.libelium.com/wireless_sensor_networks_to_control_radiation_levels_geiger_counters/) (the company that manufactures radiation kits) declares for the SBM-20 tube a convertion factor of 0.00277, which is equivalent to a gamma sensivity of 60 cps/mR/h. In other words: 60 cps are equivalent to 1 mR/h. Or 3600 cpm are equivalent to 10μS/h. Or 1 cpm is equivalent to 0.00277 μS/h. This conversion factor has to be divided by the number of used GM-tubes.
 
 ### NTP client
 
