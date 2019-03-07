@@ -359,7 +359,7 @@ void loop()
 					else
 					{
 						Serial.println("====== Writing to SPIFFS file =========");
-						f.print(now()); f.print(";"); f.print((int)lastcSvAvr);f.print(","); f.print(((int)(lastcSvAvr * 1000.0)) % 1000); f.print("\n");
+						f.print(now()); f.print(";"); f.print((int)lastcSvAvr);f.print(","); f.printf("%03d\n", ((int)(lastcSvAvr * 1000.0)) % 1000);
 						lineCount++;
 						f.close();
 					}
