@@ -74,7 +74,7 @@ The NTP client adjust the internal clock every 10 minutes. The timestamp (UTC Un
 
 ### HTTP server
 
-The HTTP server shows a webpage, which is refreshing its contents every minute or on request by the "Refresh" button, with following contents:
+The HTTP server shows a webpage (accessable over http://geigercounter.local) , which is refreshing its contents every minute or on request by the "Refresh" button, with following contents:
 
 * the session details (total hit count, total minutes, average CPM and dose) after the last power reset or pressing the "Reset Session" button.
 * a link to the download page.

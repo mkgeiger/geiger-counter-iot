@@ -5,6 +5,7 @@
 #include <ESP8266WiFi.h>
 #include <WiFiManager.h>
 #include <WiFiUdp.h>
+#include <ESP8266mDNS.h>
 #include "FS.h"
 
 /*=============================================================================
@@ -91,6 +92,7 @@ WiFiUDP udp;
 WiFiManager wifiManager;
 WiFiServer server(80);
 uint32 webRefresh = 60ul;    // how often the webpage refreshes
+const char *hostName = "geigercounter";
 
 /*=============================================================================
  =======                              METHODS                           =======
@@ -217,7 +219,9 @@ void setup()
 	}
 	else
 	{
-		Serial.println("WIFI connected");    
+    Serial.println("WIFI connected");
+    MDNS.begin(hostName); 
+    Serial.println("mDNS responder started");    
 		server.begin();
 		Serial.println("WEB server started");
 		udp.begin(localPort);
@@ -242,6 +246,9 @@ void setup()
 
 void loop() 
 {
+  // processing mDNS
+  MDNS.update();
+
 	// piezo tick handling
 	switch (piezo_state) 
 	{
