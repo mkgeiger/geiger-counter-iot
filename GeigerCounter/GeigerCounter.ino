@@ -246,8 +246,11 @@ void setup()
 
 void loop() 
 {
-  // processing mDNS
-  MDNS.update();
+  if (WiFi.status() == WL_CONNECTED)
+  {
+    // processing mDNS
+    MDNS.update();
+  }
 
 	// piezo tick handling
 	switch (piezo_state) 
